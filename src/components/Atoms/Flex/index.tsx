@@ -56,9 +56,6 @@ const createFlexComponent = (flexOptions?: FlexOptions): FlexComponentType =>
 type FlexType = FlexComponentType & {
   Row: FlexComponentType;
   RowCenter: FlexComponentType;
-  Center: FlexComponentType;
-  CenterVertical: FlexComponentType;
-  CenterHorizontal: FlexComponentType;
   Column: FlexComponentType;
   ColumnCenter: FlexComponentType;
 };
