@@ -69,21 +69,21 @@ const TYPE_VARIANTS = {
 
 const TYPE_SIZES = {
   small: {
-    fontSize: "1.2rem",
-    padding: "0.6rem 1.2rem",
+    fontSize: "12px",
+    padding: "6px 12px",
     fontWeight: "500",
-    lineHeight: "1.8rem",
+    lineHeight: "18px",
   },
   medium: {
-    fontSize: "1.6rem",
-    padding: "0.8rem 1.6rem",
-    fontWeight: "600",
-    lineHeight: "2rem",
+    fontSize: "16px",
+    padding: "8px 16px",
+    fontWeight: "500",
+    lineHeight: "20px",
   },
   large: {
-    fontSize: "2rem",
-    padding: "1rem 2rem",
-    fontWeight: "700",
-    lineHeight: "2.4rem",
+    fontSize: "20px",
+    padding: "10px 20px",
+    fontWeight: "500",
+    lineHeight: "24px",
   },
 };
