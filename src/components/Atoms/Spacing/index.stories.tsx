@@ -19,6 +19,7 @@ const Template: StoryFn<typeof Spacing> = (args) => (
   <div
     css={{
       display: "flex",
+      fontSize: "1.6rem",
       flexDirection: args.direction === "vertical" ? "column" : "row",
     }}
   >
