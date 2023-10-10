@@ -1,4 +1,3 @@
-/** @tossdocs-ignore */
 import { css } from "@emotion/react";
 import { coerceValueToCssPixel } from "..";
 

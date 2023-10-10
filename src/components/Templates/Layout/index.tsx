@@ -7,7 +7,7 @@ interface LayoutProps {
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
-    <Flex.Column css={{ marginBottom: 60 }}>
+    <Flex.Column css={{ marginBottom: 60, height: "100%" }}>
       <Header />
       <main>{children}</main>
       <BottomNavBar />

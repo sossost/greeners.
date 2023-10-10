@@ -3,11 +3,12 @@ import { Global, css } from "@emotion/react";
 
 const globalStyles = css`
   html,
-  body {
+  body,
+  #root {
     margin: 0;
     font-family: "Pretendard", sans-serif;
-    font-size: 62.5%;
-    color: ${colors.darkGray};
+    color: ${colors.mainFont};
+    height: 100%;
   }
 
   * {
@@ -18,8 +19,13 @@ const globalStyles = css`
     margin: 0 auto;
     maxwidth: 1024px;
     width: 100%;
-    padding: 0 20px;
+    height: 100%;
+    padding: 20px;
     minheight: 100vh;
+
+    @media screen and (min-width: 1024px) {
+      padding: 30px;
+    }
   }
 `;
 
