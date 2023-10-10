@@ -8,6 +8,7 @@ import {
   cloneElement,
 } from "react";
 import uuid from "react-uuid";
+import { coerceValueToCssPixel } from "@/utils/coerceValueToCssPixel";
 
 import Label from "@/components/Atoms/Label";
 import TextField from "@/components/Atoms/TextField";
@@ -28,7 +29,7 @@ const Input = ({ label, bottomText, children, ...props }: InputProps) => {
 
   return (
     <Flex.Column {...props}>
-      <Label id={id} fontSize={inputFontSize}>
+      <Label id={id} fontSize={inputFontSize + 4}>
         {label}
       </Label>
       {cloneElement(child, {
@@ -39,8 +40,8 @@ const Input = ({ label, bottomText, children, ...props }: InputProps) => {
         <p
           css={{
             color: isError ? colors.warn : colors.secondary,
-            fontSize: inputFontSize - 4,
-            marginTop: 5,
+            fontSize: coerceValueToCssPixel(inputFontSize - 4),
+            marginTop: "5px",
           }}
         >
           {bottomText}
