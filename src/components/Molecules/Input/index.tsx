@@ -1,4 +1,3 @@
-import { colors } from "@/constants/colors";
 import {
   Children,
   HTMLAttributes,
@@ -8,11 +7,10 @@ import {
   cloneElement,
 } from "react";
 import uuid from "react-uuid";
-import { coerceValueToCssPixel } from "@/utils/coerceValueToCssPixel";
+import { coerceValueToCssPixel } from "@/utils";
+import { colors } from "@/constants";
 
-import Label from "@/components/Atoms/Label";
-import TextField from "@/components/Atoms/TextField";
-import { Flex } from "@/components/Atoms/Flex";
+import { Flex, Label, TextField } from "@/components/Atoms";
 
 interface InputProps extends HTMLAttributes<HTMLDivElement> {
   label?: ReactNode;
@@ -20,7 +18,12 @@ interface InputProps extends HTMLAttributes<HTMLDivElement> {
   bottomText?: string;
 }
 
-const Input = ({ label, bottomText, children, ...props }: InputProps) => {
+export const Input = ({
+  label,
+  bottomText,
+  children,
+  ...props
+}: InputProps) => {
   const child = Children.only(children);
   const generatedId = uuid();
   const id: string = child.props.id ?? generatedId;
