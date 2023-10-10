@@ -1,4 +1,4 @@
-import { colors } from "@constants/colors";
+import { colors } from "@/constants";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
