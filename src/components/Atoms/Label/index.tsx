@@ -8,7 +8,12 @@ interface LabelProps extends HTMLAttributes<HTMLLabelElement> {
   fontSize?: number;
 }
 
-const Label = ({ children, id, fontSize = 20, ...props }: LabelProps) => {
+export const Label = ({
+  children,
+  id,
+  fontSize = 20,
+  ...props
+}: LabelProps) => {
   return (
     <label
       htmlFor={id}
@@ -25,5 +30,3 @@ const Label = ({ children, id, fontSize = 20, ...props }: LabelProps) => {
     </label>
   );
 };
-
-export default Label;

@@ -7,7 +7,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   disabled?: boolean;
 }
 
-const Button = ({
+export const Button = ({
   children,
   variant = "primary",
   size = "medium",
@@ -35,8 +35,6 @@ const Button = ({
     </button>
   );
 };
-
-export default Button;
 
 const TYPE_VARIANTS = {
   primary: {
