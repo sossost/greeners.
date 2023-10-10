@@ -1,8 +1,8 @@
 import { StoryFn, Meta } from "@storybook/react";
 import { BrowserRouter as Router } from "react-router-dom";
+import { colors } from "@/constants";
 
-import Layout from ".";
-import { colors } from "@/constants/colors";
+import { Layout } from ".";
 
 export default {
   title: "Templates/Layout",
