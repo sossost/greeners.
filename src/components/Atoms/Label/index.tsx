@@ -1,6 +1,6 @@
-import { colors } from "@/constants/colors";
-import { coerceValueToCssPixel } from "@/utils/coerceValueToCssPixel";
 import { HTMLAttributes, ReactNode } from "react";
+import { colors } from "@/constants";
+import { coerceValueToCssPixel } from "@/utils";
 
 interface LabelProps extends HTMLAttributes<HTMLLabelElement> {
   children: ReactNode;
