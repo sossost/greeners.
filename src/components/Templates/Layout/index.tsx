@@ -1,6 +1,5 @@
-import { Flex } from "../../Atoms/Flex";
-import BottomNavBar from "@components/Organisms/BottomNavBar";
-import Header from "@/components/Organisms/Header";
+import { Flex } from "@/components/Atoms";
+import { BottomNavBar, Header } from "@/components/Organisms";
 
 interface LayoutProps {
   children: React.ReactNode;

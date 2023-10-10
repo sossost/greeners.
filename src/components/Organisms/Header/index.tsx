@@ -1,14 +1,11 @@
-import { colors } from "@constants/colors";
 import { useNavigate } from "react-router-dom";
 import { css } from "@emotion/react";
-import { mediaQueryScreenAndMinWidth } from "@/utils/mediaQuery";
-import { links } from "@/constants/links";
+import { colors, links } from "@/constants";
+import { mediaQueryScreenAndMinWidth } from "@/utils";
 
-import { Flex } from "@components/Atoms/Flex";
-import Logo from "@components/Atoms/Logo";
-import Button from "@/components/Atoms/Button";
+import { Button, Flex, Logo } from "@/components/Atoms";
 
-const Header = () => {
+export const Header = () => {
   const navigate = useNavigate();
 
   return (
@@ -41,5 +38,3 @@ const Header = () => {
     </Flex.Row>
   );
 };
-
-export default Header;
