@@ -1,6 +1,6 @@
 /** @tossdocs-ignore */
 import { css } from "@emotion/react";
-import { coerceValueToCssPixel } from "./coerceValueToCssPixel";
+import { coerceValueToCssPixel } from "..";
 
 export const mediaQuery = (query: string) => (template: TemplateStringsArray) =>
   css`
