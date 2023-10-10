@@ -8,3 +8,4 @@ export * from "./ProgressBar";
 export * from "./RadialProgressBar";
 export * from "./Spacing";
 export * from "./TextField";
+export * from "./Title";
