@@ -1,5 +1,5 @@
 import { StoryFn, Meta } from "@storybook/react";
-import Input from ".";
+import { Input } from ".";
 
 type StoryType = typeof Input & {
   isError: boolean;
