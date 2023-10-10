@@ -7,7 +7,7 @@ interface TextFieldProps
   fontSize?: number;
 }
 
-const TextField = forwardRef(
+export const TextField = forwardRef(
   (
     { isError, fontSize = 16, ...props }: TextFieldProps,
     ref: ForwardedRef<HTMLInputElement>
@@ -39,5 +39,3 @@ const TextField = forwardRef(
     );
   }
 );
-
-export default TextField;

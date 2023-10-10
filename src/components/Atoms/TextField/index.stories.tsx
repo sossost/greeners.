@@ -1,5 +1,5 @@
 import { StoryFn, Meta } from "@storybook/react";
-import TextField from ".";
+import { TextField } from ".";
 
 export default {
   title: "Atoms/TextField",
