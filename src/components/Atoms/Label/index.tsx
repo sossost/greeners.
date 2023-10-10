@@ -1,4 +1,5 @@
 import { colors } from "@/constants/colors";
+import { coerceValueToCssPixel } from "@/utils/coerceValueToCssPixel";
 import { HTMLAttributes, ReactNode } from "react";
 
 interface LabelProps extends HTMLAttributes<HTMLLabelElement> {
@@ -7,15 +8,15 @@ interface LabelProps extends HTMLAttributes<HTMLLabelElement> {
   fontSize?: number;
 }
 
-const Label = ({ children, id, fontSize = 16, ...props }: LabelProps) => {
+const Label = ({ children, id, fontSize = 20, ...props }: LabelProps) => {
   return (
     <label
       htmlFor={id}
       css={{
-        fontSize: fontSize + 4,
-        lineHeight: "24px",
-        fontWeight: 500,
-        marginBottom: 5,
+        fontSize: coerceValueToCssPixel(fontSize),
+        lineHeight: coerceValueToCssPixel(fontSize + 4),
+        fontWeight: "500",
+        marginBottom: "5px",
         color: colors.primary,
       }}
       {...props}
