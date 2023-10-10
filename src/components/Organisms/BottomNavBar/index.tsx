@@ -5,10 +5,9 @@ import { LuGoal } from "react-icons/lu";
 import { BsFillCameraFill } from "react-icons/bs";
 import { BsBarChartFill } from "react-icons/bs";
 import { FaUser } from "react-icons/fa";
-import { colors } from "@constants/colors";
-import { links } from "@constants/links";
-import { mediaQueryScreenAndMinWidth } from "@utils/mediaQuery";
 import { css } from "@emotion/react";
+import { mediaQueryScreenAndMinWidth } from "@/utils/css/mediaQuery";
+import { colors, links } from "@/constants";
 
 import { Flex } from "../../Atoms/Flex";
 
@@ -46,7 +45,7 @@ const MENUES = [
   },
 ];
 
-const BottomNavBar = () => {
+export const BottomNavBar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const pathname = location.pathname;
@@ -101,5 +100,3 @@ const BottomNavBar = () => {
     </Flex.Row>
   );
 };
-
-export default BottomNavBar;

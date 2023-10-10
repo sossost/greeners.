@@ -1,7 +1,7 @@
 import { StoryFn, Meta } from "@storybook/react";
 import { BrowserRouter as Router } from "react-router-dom";
 
-import BottomNavBar from ".";
+import { BottomNavBar } from ".";
 
 export default {
   title: "Organisms/BottomNavBar",
