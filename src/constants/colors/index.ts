@@ -9,4 +9,5 @@ export const colors = {
   warn: "#FF0000",
   lightGray: "#F6F6F6",
   darkGray: "#333333",
+  mainFont: "#414141",
 };
