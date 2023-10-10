@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { coerceValueToCssPixel } from "@/utils/coerceValueToCssPixel";
+import { coerceValueToCssPixel } from "@/utils";
 
 interface SpacingProps {
   direction?: "vertical" | "horizontal";
