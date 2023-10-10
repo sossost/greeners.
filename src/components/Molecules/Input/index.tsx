@@ -54,8 +54,6 @@ export const Input = ({
   );
 };
 
-export default Input;
-
 interface TextFieldProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "size"> {
   isError?: boolean;
