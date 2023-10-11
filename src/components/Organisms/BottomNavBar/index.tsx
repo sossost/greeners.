@@ -1,15 +1,13 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { IconType } from "react-icons";
+import { colors, links } from "@/constants";
+import * as S from "./index.styles";
+
 import { GoHomeFill } from "react-icons/go";
 import { LuGoal } from "react-icons/lu";
 import { BsFillCameraFill } from "react-icons/bs";
 import { BsBarChartFill } from "react-icons/bs";
 import { FaUser } from "react-icons/fa";
-import { css } from "@emotion/react";
-import { mediaQueryScreenAndMinWidth } from "@/utils/css/mediaQuery";
-import { colors, links } from "@/constants";
-
-import { Flex } from "../../Atoms/Flex";
 
 interface Menu {
   title: string;
@@ -55,48 +53,24 @@ export const BottomNavBar = () => {
   };
 
   return (
-    <Flex.Row
-      css={css`
-        height: 60px;
-        position: fixed;
-        bottom: 0;    
-        width: 100%;
-        background-color: ${colors.white};
-        border-top: 1px solid ${colors.lightGray};
-        ${mediaQueryScreenAndMinWidth(1024)`
-          display: none;
-        `}
-        )}
-    `}
-    >
+    <S.BottomNavBarContainer>
       {MENUES.map((menu) => {
         const Icon = menu.icon;
+        const isActive: boolean = pathname === menu.link;
+
         return (
-          <Flex.ColumnCenter
+          <S.ButtonWrapper
             key={menu.title}
             onClick={() => handleMenuClick(menu)}
-            css={{
-              gap: 5,
-              padding: 5,
-              flex: 1,
-            }}
           >
             <Icon
               size={25}
-              color={pathname === menu.link ? colors.primary : colors.secondary}
+              color={isActive ? colors.primary : colors.secondary}
             />
-            <span
-              css={{
-                fontSize: "12px",
-                color:
-                  pathname === menu.link ? colors.primary : colors.secondary,
-              }}
-            >
-              {menu.title}
-            </span>
-          </Flex.ColumnCenter>
+            <S.ButtonText isActive={isActive}>{menu.title}</S.ButtonText>
+          </S.ButtonWrapper>
         );
       })}
-    </Flex.Row>
+    </S.BottomNavBarContainer>
   );
 };

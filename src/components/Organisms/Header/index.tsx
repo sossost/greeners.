@@ -1,40 +1,27 @@
-import { useNavigate } from "react-router-dom";
-import { css } from "@emotion/react";
-import { colors, links } from "@/constants";
-import { mediaQueryScreenAndMinWidth } from "@/utils";
+import { useLocation, useNavigate } from "react-router-dom";
+import { links } from "@/constants";
+import * as S from "./index.styles";
 
-import { Button, Flex, Logo } from "@/components/Atoms";
+import { Button, Logo } from "@/components/Atoms";
+
+const MOBILE_SHOWN_PATHS = [links.home];
 
 export const Header = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const isMobileShown = MOBILE_SHOWN_PATHS.includes(location.pathname);
 
   return (
-    <Flex.Row
-      justify="space-between"
-      css={{
-        backgroundColor: colors.white,
-        padding: "0 20px",
-        height: "60px",
-        borderBottom: `1px solid ${colors.lightGray}`,
-      }}
-    >
+    <S.HeaderContainer isMobileShown={isMobileShown}>
       <Logo />
-      <div
-        css={css`
-          display: none;
-          gap: 10px;
-          ${mediaQueryScreenAndMinWidth(1024)`
-            display: flex;
-          `}
-        `}
-      >
-        <Button variant="secondary" onClick={() => navigate(links.login)}>
+      <S.ButtonWrapper>
+        <Button variant="textOnly" onClick={() => navigate(links.login)}>
           로그인
         </Button>
         <Button variant="primary" onClick={() => navigate(links.signUp)}>
           회원가입
         </Button>
-      </div>
-    </Flex.Row>
+      </S.ButtonWrapper>
+    </S.HeaderContainer>
   );
 };
