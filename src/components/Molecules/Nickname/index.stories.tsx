@@ -1,3 +1,4 @@
+import { BrowserRouter as Router } from "react-router-dom";
 import { StoryFn, Meta } from "@storybook/react";
 import { Nickname } from ".";
 
@@ -20,7 +21,9 @@ export default {
 } as Meta<typeof Nickname>;
 
 const Template: StoryFn<typeof Nickname> = (args) => (
-  <Nickname {...args}>{args.children}</Nickname>
+  <Router>
+    <Nickname {...args}>{args.children}</Nickname>
+  </Router>
 );
 
 export const Default = Template.bind({});
