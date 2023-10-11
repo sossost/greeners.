@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { colors } from "@/constants";
+import { colors, breakpoints } from "@/constants";
 import { mediaQueryScreenAndMinWidth } from "@/utils";
 
 import { Flex } from "@/components/Atoms";
@@ -11,9 +11,9 @@ export const BottomNavBarContainer = styled(Flex.Row)`
   width: 100%;
   background-color: ${colors.white};
   border-top: 1px solid ${colors.lightGray};
-  ${mediaQueryScreenAndMinWidth(1024)`
+  ${mediaQueryScreenAndMinWidth(breakpoints.desktop)} {
     display: none;
-  `}
+  }
 `;
 
 export const ButtonWrapper = styled(Flex.ColumnCenter)`
