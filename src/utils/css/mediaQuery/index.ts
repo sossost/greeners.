@@ -1,12 +1,7 @@
-import { css } from "@emotion/react";
 import { coerceValueToCssPixel } from "..";
 
-export const mediaQuery = (query: string) => (template: TemplateStringsArray) =>
-  css`
-    @media ${query} {
-      ${template.raw.join("")}
-    }
-  `;
+export const mediaQuery = (query: string) => `
+  @media ${query}`;
 
 export const mediaQueryScreenAndMaxWidth = (maxWidth: string | number) =>
   mediaQuery(`screen and (max-width: ${coerceValueToCssPixel(maxWidth)})`);
