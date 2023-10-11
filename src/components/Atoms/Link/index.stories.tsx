@@ -5,13 +5,6 @@ import { Link } from ".";
 export default {
   title: "Atoms/Link",
   component: Link,
-  argTypes: {
-    children: { control: "text" },
-    size: {
-      options: ["small", "medium", "large"],
-      control: { type: "radio" },
-    },
-  },
 } as Meta<typeof Image>;
 
 const Template: StoryFn<typeof Link> = (args) => (
@@ -23,5 +16,6 @@ const Template: StoryFn<typeof Link> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   children: "Link",
-  size: "medium",
+  openInNewTab: false,
+  to: "/",
 };
