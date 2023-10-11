@@ -1,5 +1,5 @@
 import { StoryFn, Meta } from "@storybook/react";
-import Spacing from ".";
+import { Spacing } from ".";
 
 export default {
   title: "Atoms/Spacing",

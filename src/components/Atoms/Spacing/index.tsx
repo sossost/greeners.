@@ -6,7 +6,7 @@ interface SpacingProps {
   size: number | string;
 }
 
-const Spacing = memo(function Spacing({
+export const Spacing = memo(function Spacing({
   direction = "vertical",
   size,
   ...props
@@ -24,5 +24,3 @@ const Spacing = memo(function Spacing({
     />
   );
 });
-
-export default Spacing;
