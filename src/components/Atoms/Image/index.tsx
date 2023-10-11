@@ -4,7 +4,7 @@ import { HTMLAttributes } from "react";
 interface ImageProps extends HTMLAttributes<HTMLDivElement> {
   src: string;
   alt: string;
-  size: number;
+  size: number | string;
 }
 
 export const Image = ({ src, alt, size, ...props }: ImageProps) => {

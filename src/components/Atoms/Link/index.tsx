@@ -16,6 +16,8 @@ export const Link = ({
   return (
     <LinkComponent
       css={{
+        display: "flex",
+        alignItems: "center",
         textDecoration: "none",
         color: "inherit",
         "@media screen and (min-width: 1024px)": {
