@@ -1,10 +1,10 @@
 import { BrowserRouter as Router } from "react-router-dom";
 import { StoryFn, Meta } from "@storybook/react";
-import { Nickname } from ".";
+import { Link } from ".";
 
 export default {
-  title: "Atoms/Nickname",
-  component: Nickname,
+  title: "Atoms/Link",
+  component: Link,
   argTypes: {
     children: { control: "text" },
     size: {
@@ -14,14 +14,14 @@ export default {
   },
 } as Meta<typeof Image>;
 
-const Template: StoryFn<typeof Nickname> = (args) => (
+const Template: StoryFn<typeof Link> = (args) => (
   <Router>
-    <Nickname {...args} />
+    <Link {...args} />
   </Router>
 );
 
 export const Default = Template.bind({});
 Default.args = {
-  children: "Nickname",
+  children: "Link",
   size: "medium",
 };
