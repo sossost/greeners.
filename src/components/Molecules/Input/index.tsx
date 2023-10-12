@@ -5,6 +5,7 @@ import {
   ReactElement,
   ReactNode,
   cloneElement,
+  forwardRef,
 } from "react";
 import uuid from "react-uuid";
 import { coerceValueToCssPixel } from "@/utils";
@@ -28,11 +29,11 @@ export const Input = ({
   const generatedId = uuid();
   const id: string = child.props.id ?? generatedId;
   const isError = child.props.isError ?? false;
-  const inputFontSize = child.props.fontSize ?? 16;
+  const inputFontSize = child.props.fontSize ?? 14;
 
   return (
     <Flex.Column {...props}>
-      <Label id={id} fontSize={inputFontSize + 4}>
+      <Label id={id} fontSize={inputFontSize}>
         {label}
       </Label>
       {cloneElement(child, {
@@ -59,6 +60,8 @@ interface TextFieldProps
   isError?: boolean;
 }
 
-Input.TextField = ({ isError, ...props }: TextFieldProps) => (
-  <TextField isError={isError} {...props} />
+Input.TextField = forwardRef<HTMLInputElement, TextFieldProps>(
+  ({ isError, ...props }, ref) => (
+    <TextField isError={isError} ref={ref} {...props} />
+  )
 );
