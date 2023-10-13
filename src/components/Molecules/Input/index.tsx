@@ -33,7 +33,7 @@ export const Input = ({
 
   return (
     <Flex.Column {...props}>
-      <Label id={id} fontSize={inputFontSize}>
+      <Label htmlFor={id} fontSize={inputFontSize}>
         {label}
       </Label>
       {cloneElement(child, {

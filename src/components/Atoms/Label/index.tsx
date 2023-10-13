@@ -4,19 +4,19 @@ import { coerceValueToCssPixel } from "@/utils";
 
 interface LabelProps extends HTMLAttributes<HTMLLabelElement> {
   children: ReactNode;
-  id: string;
+  htmlFor: string;
   fontSize?: number;
 }
 
 export const Label = ({
   children,
-  id,
+  htmlFor,
   fontSize = 14,
   ...props
 }: LabelProps) => {
   return (
     <label
-      htmlFor={id}
+      htmlFor={htmlFor}
       css={{
         fontSize: coerceValueToCssPixel(fontSize),
         lineHeight: coerceValueToCssPixel(fontSize + 4),
