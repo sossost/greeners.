@@ -21,7 +21,7 @@ export const TextField = forwardRef(
           fontSize: coerceValueToCssPixel(fontSize),
           fontWeight: 500,
           lineHeight: "1.4",
-          border: `1px solid ${isError ? colors.warn : colors.pastel}`,
+          border: `1px solid ${isError ? colors.warn : colors.lightGray}`,
           boxShadow: isError ? `0 0 0 2px ${colors.warn}20` : "none",
           borderRadius: "5px",
           outline: "none",
