@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { colors } from "@/constants";
-import { Flex } from "@/components/Atoms";
 
 export const HeaderContainer = styled.div<{ isMobileShown: boolean }>`
   display: ${({ isMobileShown }) => (isMobileShown ? "flex" : "none")};

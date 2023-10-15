@@ -1,10 +1,10 @@
 import { StoryFn, Meta } from "@storybook/react";
 import { BrowserRouter as Router } from "react-router-dom";
 
-import Header from ".";
+import { Header } from ".";
 
 export default {
-  title: "Molecules/Header",
+  title: "Organisms/Header",
   component: Header,
 } as Meta<typeof Header>;
 
