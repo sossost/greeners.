@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { app } from "./firebaseApp";
 import { BrowserRouter as Router } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { ToastProvider } from "./provider/ToastProvider";
 
 import AppRoutes from "./routes";
 import GlobalStyle from "./styles/global.style";
@@ -27,6 +28,7 @@ function App() {
   return (
     <Router>
       <GlobalStyle />
+      <ToastProvider />
       <Layout>
         {init ? <AppRoutes isAuthenticated={isAuthenticated} /> : <Loading />}
       </Layout>
