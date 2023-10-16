@@ -29,11 +29,16 @@ export const Input = ({
   const generatedId = uuid();
   const id: string = child.props.id ?? generatedId;
   const isError = child.props.isError ?? false;
-  const inputFontSize = child.props.fontSize ?? 14;
+  const inputFontSize = child.props.fontSize ?? 15;
 
   return (
-    <Flex.Column {...props}>
-      <Label htmlFor={id} fontSize={inputFontSize}>
+    <Flex.Column
+      css={{
+        width: "100%",
+      }}
+      {...props}
+    >
+      <Label htmlFor={id} fontSize={inputFontSize + 1}>
         {label}
       </Label>
       {cloneElement(child, {
