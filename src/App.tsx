@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { app } from "./firebaseApp";
 import { BrowserRouter as Router } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { ToastProvider } from "./provider/ToastProvider";
 
+import { AuthContextProvider, ToastProvider } from "./provider";
 import AppRoutes from "./routes";
 import GlobalStyle from "./styles/global.style";
 import { Layout } from "./components/Templates";
@@ -26,13 +26,15 @@ function App() {
   }, [auth]);
 
   return (
-    <Router>
-      <GlobalStyle />
-      <ToastProvider />
-      <Layout>
-        {init ? <AppRoutes isAuthenticated={isAuthenticated} /> : <Loading />}
-      </Layout>
-    </Router>
+    <AuthContextProvider>
+      <Router>
+        <GlobalStyle />
+        <ToastProvider />
+        <Layout>
+          {init ? <AppRoutes isAuthenticated={isAuthenticated} /> : <Loading />}
+        </Layout>
+      </Router>
+    </AuthContextProvider>
   );
 }
 
