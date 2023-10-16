@@ -3,7 +3,11 @@ import { app } from "./firebaseApp";
 import { BrowserRouter as Router } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
-import { AuthContextProvider, ToastProvider } from "./provider";
+import {
+  AuthContextProvider,
+  BreakpointContextProvider,
+  ToastProvider,
+} from "./provider";
 import AppRoutes from "./routes";
 import GlobalStyle from "./styles/global.style";
 import { Layout } from "./components/Templates";
@@ -30,9 +34,15 @@ function App() {
       <Router>
         <GlobalStyle />
         <ToastProvider />
-        <Layout>
-          {init ? <AppRoutes isAuthenticated={isAuthenticated} /> : <Loading />}
-        </Layout>
+        <BreakpointContextProvider>
+          <Layout>
+            {init ? (
+              <AppRoutes isAuthenticated={isAuthenticated} />
+            ) : (
+              <Loading />
+            )}
+          </Layout>
+        </BreakpointContextProvider>
       </Router>
     </AuthContextProvider>
   );
