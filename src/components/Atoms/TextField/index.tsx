@@ -3,7 +3,7 @@ import { colors } from "@/constants/colors";
 import { coerceValueToCssPixel, mediaQueryScreenAndMinWidth } from "@/utils";
 import { ForwardedRef, InputHTMLAttributes, forwardRef } from "react";
 
-interface TextFieldProps
+export interface TextFieldProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "size"> {
   isError?: boolean;
   fontSize?: number;

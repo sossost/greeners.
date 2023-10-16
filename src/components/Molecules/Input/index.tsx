@@ -1,7 +1,6 @@
 import {
   Children,
   HTMLAttributes,
-  InputHTMLAttributes,
   ReactElement,
   ReactNode,
   cloneElement,
@@ -11,7 +10,7 @@ import uuid from "react-uuid";
 import { coerceValueToCssPixel } from "@/utils";
 import { colors } from "@/constants";
 
-import { Flex, Label, TextField } from "@/components/Atoms";
+import { Flex, Label, TextField, TextFieldProps } from "@/components/Atoms";
 
 interface InputProps extends HTMLAttributes<HTMLDivElement> {
   label?: ReactNode;
@@ -60,12 +59,11 @@ export const Input = ({
   );
 };
 
-interface TextFieldProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, "size"> {
+interface InputTextFieldProps extends TextFieldProps {
   isError?: boolean;
 }
 
-Input.TextField = forwardRef<HTMLInputElement, TextFieldProps>(
+Input.TextField = forwardRef<HTMLInputElement, InputTextFieldProps>(
   ({ isError, ...props }, ref) => (
     <TextField isError={isError} ref={ref} {...props} />
   )
