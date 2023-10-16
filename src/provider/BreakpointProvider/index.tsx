@@ -1,15 +1,22 @@
-import { useState, useEffect } from "react";
-import { breakpoints } from "@/constants";
+import { createContext, useEffect, useState } from "react";
 
-type Breakpoint = "mobile" | "tablet" | "desktop" | "largeDesktop";
+import { Breakpoint, breakpoints } from "@/constants";
 
-const useCurrentBreakpoint = () => {
-  const [breakpoint, setBreakpoint] = useState<Breakpoint>("mobile");
+interface AuthProviderProps {
+  children: React.ReactNode;
+}
+
+export const BreakpointContext = createContext({
+  breakpoint: null as Breakpoint | null,
+});
+
+export const BreakpointContextProvider = ({ children }: AuthProviderProps) => {
+  const [breakpoint, setBreakpoint] = useState<Breakpoint | null>(null);
 
   useEffect(() => {
     const handleResize = () => {
       const windowWidth = window.innerWidth;
-      let newBreakpoint = "mobile";
+      let newBreakpoint = null;
 
       if (windowWidth >= breakpoints.mobile) {
         newBreakpoint = "mobile";
@@ -30,19 +37,20 @@ const useCurrentBreakpoint = () => {
       setBreakpoint(newBreakpoint as Breakpoint);
     };
 
-    // Initial check
     handleResize();
 
-    // Listen for window resize events
     window.addEventListener("resize", handleResize);
 
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
 
-  return breakpoint;
-};
+  if (!breakpoint) return null;
 
-export default useCurrentBreakpoint;
+  return (
+    <BreakpointContext.Provider value={{ breakpoint }}>
+      {children}
+    </BreakpointContext.Provider>
+  );
+};
