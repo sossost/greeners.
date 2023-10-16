@@ -1,7 +1,10 @@
-import { breakpoints, colors } from "@/constants";
-import { mediaQueryScreenAndMinWidth } from "@/utils";
+import {
+  CenterSlotWrapper,
+  DefaultLeftSlotWrapper,
+  MobileHeaderContainer,
+} from "./index.styles";
 
-import { BackButton, Flex } from "@/components/Atoms";
+import { BackButton } from "@/components/Atoms";
 
 interface MobileHeaderProps {
   title?: string;
@@ -19,35 +22,31 @@ export const MobileHeader = ({
   if (!title) return null;
 
   return (
-    <Flex.Row
-      justify="space-between"
-      css={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        height: "60px",
-        padding: "0 20px",
-        backgroundColor: colors.white,
-        [mediaQueryScreenAndMinWidth(breakpoints.desktop)]: {
-          display: "none",
-        },
-      }}
-    >
-      {leftSlot || (
-        <Flex.Row
-          css={{
-            gap: "10px",
-            fontSize: "20px",
-            fontWeight: "500",
-          }}
-        >
-          <BackButton />
-          {title}
-        </Flex.Row>
-      )}
-      {centerSlot}
+    <MobileHeaderContainer>
+      {leftSlot || <DefaultLeftSlot title={title} />}
+      {centerSlot && <CenterSlot>{centerSlot}</CenterSlot>}
       {rightSlot}
-    </Flex.Row>
+    </MobileHeaderContainer>
   );
+};
+
+interface DefaultLeftSlotProps {
+  title: string;
+}
+
+const DefaultLeftSlot = ({ title }: DefaultLeftSlotProps) => {
+  return (
+    <DefaultLeftSlotWrapper>
+      <BackButton />
+      {title}
+    </DefaultLeftSlotWrapper>
+  );
+};
+
+interface CenterSlotProps {
+  children: React.ReactNode;
+}
+
+const CenterSlot = ({ children }: CenterSlotProps) => {
+  return <CenterSlotWrapper>{children}</CenterSlotWrapper>;
 };
