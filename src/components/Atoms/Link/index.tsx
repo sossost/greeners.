@@ -1,3 +1,5 @@
+import { breakpoints } from "@/constants";
+import { mediaQueryScreenAndMinWidth } from "@/utils";
 import {
   Link as LinkComponent,
   LinkProps as LinkComponentProps,
@@ -6,11 +8,13 @@ import {
 interface LinkProps extends LinkComponentProps {
   children: React.ReactNode;
   openInNewTab?: boolean;
+  underLine?: boolean;
 }
 
 export const Link = ({
   children,
   openInNewTab = false,
+  underLine = false,
   ...props
 }: LinkProps) => {
   return (
@@ -18,9 +22,9 @@ export const Link = ({
       css={{
         display: "flex",
         alignItems: "center",
-        textDecoration: "none",
+        textDecoration: underLine ? "underline" : "none",
         color: "inherit",
-        "@media screen and (min-width: 1024px)": {
+        [mediaQueryScreenAndMinWidth(breakpoints.desktop)]: {
           cursor: "pointer",
           "&:hover": {
             opacity: 0.7,
