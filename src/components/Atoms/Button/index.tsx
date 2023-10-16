@@ -21,6 +21,8 @@ export const Button = ({
         alignItems: "center",
         justifyContent: "center",
         fontFamily: "inherit",
+        fontWeight: "500",
+        lineHeight: "2.5",
         outline: "none",
         borderRadius: "10px",
         transition: "all .3s ease",
@@ -68,20 +70,14 @@ const TYPE_VARIANTS = {
 const TYPE_SIZES = {
   small: {
     fontSize: "12px",
-    padding: "6px 12px",
-    fontWeight: "500",
-    lineHeight: "14px",
+    padding: "0 12px",
   },
   medium: {
     fontSize: "15px",
-    padding: "8px 15px",
-    fontWeight: "500",
-    lineHeight: "18px",
+    padding: "0 15px",
   },
   large: {
     fontSize: "18px",
-    padding: "9px 18px",
-    fontWeight: "500",
-    lineHeight: "22px",
+    padding: "0 18px",
   },
 };
