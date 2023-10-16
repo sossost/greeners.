@@ -11,7 +11,7 @@ interface LabelProps extends HTMLAttributes<HTMLLabelElement> {
 export const Label = ({
   children,
   htmlFor,
-  fontSize = 14,
+  fontSize = 16,
   ...props
 }: LabelProps) => {
   return (
@@ -19,9 +19,8 @@ export const Label = ({
       htmlFor={htmlFor}
       css={{
         fontSize: coerceValueToCssPixel(fontSize),
-        lineHeight: coerceValueToCssPixel(fontSize + 4),
-        fontWeight: "500",
-        marginBottom: "5px",
+        lineHeight: 2.5,
+        fontWeight: "600",
         color: colors.mainFont,
       }}
       {...props}
