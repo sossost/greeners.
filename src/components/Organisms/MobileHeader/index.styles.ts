@@ -5,10 +5,8 @@ import { mediaQueryScreenAndMinWidth } from "@/utils";
 import { Flex } from "@/components/Atoms";
 
 export const MobileHeaderContainer = styled(Flex.Row)`
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
   height: 60px;
   padding: 0 20px;
   background-color: ${colors.white};
