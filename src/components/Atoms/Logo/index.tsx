@@ -15,6 +15,7 @@ export const Logo = ({ link }: LogoProps) => {
         fontSize: "24px",
         fontWeight: "bold",
         cursor: "pointer",
+        textAlign: "center",
       }}
       onClick={() => navigate(link || links.home)}
     >

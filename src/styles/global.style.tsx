@@ -9,23 +9,28 @@ const globalStyles = css`
     font-family: "Pretendard", sans-serif;
     color: ${colors.mainFont};
     height: 100%;
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  main {
+    width: 100%;
+    height: 100%;
   }
 
   * {
     box-sizing: border-box;
   }
 
-  main {
-    margin: 0 auto;
-    maxwidth: 1024px;
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    minheight: 100vh;
+  .scroll::-webkit-scrollbar {
+    display: none;
+  }
 
-    @media screen and (min-width: 1024px) {
-      padding: 30px;
-    }
+  .scroll {
+    -ms-overflow-style: none; /* 인터넷 익스플로러 */
+    scrollbar-width: none; /* 파이어폭스 */
   }
 `;
 
