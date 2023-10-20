@@ -4,5 +4,6 @@ export * from "./Loading";
 export * from "./Nickname";
 export * from "./Section";
 export * from "./Select";
+export * from "./SocialLoginButtons";
 export * from "./Footer";
 export * from "./Input";
