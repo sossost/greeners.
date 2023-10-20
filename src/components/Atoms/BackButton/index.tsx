@@ -1,4 +1,4 @@
-import { colors } from "@/constants";
+import { vars } from "@/token";
 import { useNavigate } from "react-router-dom";
 
 import { IoIosArrowBack } from "react-icons/io";
@@ -19,7 +19,7 @@ export const BackButton = ({
     <IoIosArrowBack
       onClick={onClick ? onClick : () => navigate(-1)}
       size={size}
-      color={colors.primary}
+      color={vars.colors.primary}
       {...props}
     />
   );

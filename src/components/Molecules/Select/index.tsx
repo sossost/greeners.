@@ -8,12 +8,12 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { colors, breakpoints } from "@/constants";
+import { vars } from "@/token";
 import { mediaQueryScreenAndMinWidth } from "@/utils";
 import { FiChevronDown } from "react-icons/fi";
 import uuid from "react-uuid";
 
-import { Flex, Label } from "@/components/Atoms";
+import { Flex, Label } from "@components/Atoms";
 
 interface SelectContext {
   selectedValue: string | null;
@@ -148,15 +148,17 @@ const SelectTrigger = React.forwardRef(
         onClick={handleClick}
         justify="space-between"
         css={{
-          borderRadius: "5px",
-          border: `1px solid ${isOpen ? colors.primary : colors.lightGray}`,
-          boxShadow: isOpen ? `0 0 0 2px ${colors.primary}20` : "none",
+          borderRadius: vars.borderRadius.default,
+          border: `1px solid ${
+            isOpen ? vars.colors.primary : vars.colors.lightGray
+          }`,
+          boxShadow: isOpen ? `0 0 0 2px ${vars.colors.primary}20` : "none",
           cursor: "pointer",
           paddingRight: "8px",
-          [mediaQueryScreenAndMinWidth(breakpoints.desktop)]: {
+          [mediaQueryScreenAndMinWidth(vars.breakpoints.desktop)]: {
             "&:hover": {
-              border: `1px solid ${colors.primary}`,
-              boxShadow: `0 0 0 2px ${colors.primary}20`,
+              border: `1px solid ${vars.colors.primary}`,
+              boxShadow: `0 0 0 2px ${vars.colors.primary}20`,
             },
           },
         }}
@@ -169,14 +171,14 @@ const SelectTrigger = React.forwardRef(
           ) : (
             <span
               css={{
-                color: colors.gray,
+                color: vars.colors.gray,
               }}
             >
               {children}
             </span>
           )}
         </SelectItem>
-        <FiChevronDown color={colors.gray} size={20} />
+        <FiChevronDown color={vars.colors.gray} size={20} />
       </Flex.Row>
     );
   }
@@ -199,7 +201,7 @@ const SelectOptionList = React.forwardRef(
         css={{
           position: "relative",
           borderRadius: "5px",
-          border: `1px solid ${colors.lightGray}`,
+          border: `1px solid ${vars.colors.lightGray}`,
         }}
         ref={ref}
       >
@@ -230,9 +232,9 @@ Select.Option = React.forwardRef(
         onClick={handleClick}
         css={{
           cursor: "pointer",
-          [mediaQueryScreenAndMinWidth(breakpoints.desktop)]: {
+          [mediaQueryScreenAndMinWidth(vars.breakpoints.desktop)]: {
             "&:hover": {
-              backgroundColor: colors.pastel,
+              backgroundColor: vars.colors.pastel,
             },
           },
         }}

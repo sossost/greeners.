@@ -1,4 +1,4 @@
-import { colors } from "@/constants/colors";
+import { vars } from "@/token";
 import { HTMLAttributes } from "react";
 
 interface ImageProps extends HTMLAttributes<HTMLDivElement> {
@@ -13,7 +13,7 @@ export const Image = ({ src, alt, size, ...props }: ImageProps) => {
       css={{
         width: size,
         overflow: "hidden",
-        backgroundColor: colors.lightGray,
+        backgroundColor: vars.colors.lightGray,
       }}
       {...props}
     >

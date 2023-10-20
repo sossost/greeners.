@@ -1,5 +1,6 @@
 import { links } from "@/constants";
-import { Link } from "@/components/Atoms";
+import { vars } from "@/token";
+import { Link } from "@components/Atoms";
 
 interface NicknameProps {
   children: string;
@@ -11,7 +12,7 @@ export const Nickname = ({ children, size = "medium" }: NicknameProps) => {
     <Link
       to={`${links.user}/${children}`}
       css={{
-        fontWeight: "500",
+        fontWeight: vars.fontWeight.medium,
         ...TYPE_SIZES[size],
       }}
     >

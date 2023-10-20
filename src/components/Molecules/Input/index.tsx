@@ -8,9 +8,9 @@ import {
 } from "react";
 import uuid from "react-uuid";
 import { coerceValueToCssPixel } from "@/utils";
-import { colors } from "@/constants";
+import { vars } from "@/token";
 
-import { Flex, Label, TextField, TextFieldProps } from "@/components/Atoms";
+import { Flex, Label, TextField, TextFieldProps } from "@components/Atoms";
 
 interface InputProps extends HTMLAttributes<HTMLDivElement> {
   label?: ReactNode;
@@ -47,7 +47,7 @@ export const Input = ({
       {bottomText && (
         <p
           css={{
-            color: isError ? colors.warn : colors.secondary,
+            color: isError ? vars.colors.warn : vars.colors.secondary,
             fontSize: coerceValueToCssPixel(inputFontSize - 4),
             marginTop: "5px",
           }}

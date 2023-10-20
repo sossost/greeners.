@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 
-import { Breakpoint, breakpoints } from "@/constants";
+import { Breakpoint, vars } from "@/token";
 
 interface AuthProviderProps {
   children: React.ReactNode;
@@ -18,19 +18,19 @@ export const BreakpointContextProvider = ({ children }: AuthProviderProps) => {
       const windowWidth = window.innerWidth;
       let newBreakpoint = null;
 
-      if (windowWidth >= breakpoints.mobile) {
+      if (windowWidth >= vars.breakpoints.mobile) {
         newBreakpoint = "mobile";
       }
 
-      if (windowWidth >= breakpoints.tablet) {
+      if (windowWidth >= vars.breakpoints.tablet) {
         newBreakpoint = "tablet";
       }
 
-      if (windowWidth >= breakpoints.desktop) {
+      if (windowWidth >= vars.breakpoints.desktop) {
         newBreakpoint = "desktop";
       }
 
-      if (windowWidth >= breakpoints.largeDesktop) {
+      if (windowWidth >= vars.breakpoints.largeDesktop) {
         newBreakpoint = "largeDesktop";
       }
 

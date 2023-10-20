@@ -1,5 +1,4 @@
-import { breakpoints } from "@/constants";
-import { colors } from "@/constants/colors";
+import { vars } from "@/token";
 import { coerceValueToCssPixel, mediaQueryScreenAndMinWidth } from "@/utils";
 import { ForwardedRef, InputHTMLAttributes, forwardRef } from "react";
 
@@ -20,22 +19,24 @@ export const TextField = forwardRef(
           width: "100%",
           padding: "0px 12px",
           fontSize: coerceValueToCssPixel(fontSize),
-          fontWeight: 500,
+          fontWeight: vars.fontWeight.medium,
           lineHeight: 3,
-          border: `1px solid ${isError ? colors.warn : colors.lightGray}`,
-          boxShadow: isError ? `0 0 0 2px ${colors.warn}20` : "none",
-          borderRadius: "5px",
+          border: `1px solid ${
+            isError ? vars.colors.warn : vars.colors.lightGray
+          }`,
+          boxShadow: isError ? `0 0 0 2px ${vars.colors.warn}20` : "none",
+          borderRadius: vars.borderRadius.default,
           outline: "none",
           "&:hover": {
-            border: `1px solid ${colors.primary}`,
+            border: `1px solid ${vars.colors.primary}`,
           },
           "&:focus": {
-            border: `1px solid ${colors.primary}`,
-            boxShadow: `0 0 0 2px ${colors.primary}20`,
+            border: `1px solid ${vars.colors.primary}`,
+            boxShadow: `0 0 0 2px ${vars.colors.primary}20`,
           },
           transition: "all 0.2s ease-in-out",
-          [mediaQueryScreenAndMinWidth(breakpoints.desktop)]: {
-            lineHeight: 2.5,
+          [mediaQueryScreenAndMinWidth(vars.breakpoints.desktop)]: {
+            lineHeight: vars.lineHeight.input,
           },
         }}
         {...props}

@@ -1,5 +1,5 @@
 import { HTMLAttributes, ReactNode } from "react";
-import { colors } from "@/constants";
+import { vars } from "@/token";
 import { coerceValueToCssPixel } from "@/utils";
 
 interface LabelProps extends HTMLAttributes<HTMLLabelElement> {
@@ -21,7 +21,7 @@ export const Label = ({
         fontSize: coerceValueToCssPixel(fontSize),
         lineHeight: 2.5,
         fontWeight: "600",
-        color: colors.mainFont,
+        color: vars.colors.mainFont,
       }}
       {...props}
     >

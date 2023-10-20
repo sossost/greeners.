@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import * as d3 from "d3";
-import { colors } from "@/constants/colors";
+import { vars } from "@/token";
 
 interface CircularProgressProps {
   radius: number;
@@ -38,7 +38,7 @@ export const RadialProgressBar = ({
       .append("path")
       .attr("d", backgroundArc)
       .attr("transform", `translate(${centerX}, ${centerY})`)
-      .attr("fill", colors.lightGray); // 배경 색상
+      .attr("fill", vars.colors.lightGray); // 배경 색상
 
     const arc = d3
       .arc<unknown>()
@@ -52,7 +52,7 @@ export const RadialProgressBar = ({
       .append("path")
       .attr("d", arc)
       .attr("transform", `translate(${centerX}, ${centerY})`)
-      .attr("fill", colors.primary); // 프로그레스 바의 색상
+      .attr("fill", vars.colors.primary); // 프로그레스 바의 색상
 
     // 퍼센트 텍스트를 추가할 수 있습니다.
     svg
@@ -63,7 +63,7 @@ export const RadialProgressBar = ({
       .attr("dy", ".35em")
       .attr("text-anchor", "middle")
       .style("font-size", "20px")
-      .style("fill", colors.primary); // 텍스트의 색상
+      .style("fill", vars.colors.primary); // 텍스트의 색상
   }, [radius, percent, thickness]);
 
   return <svg width={radius * 2} height={radius * 2} ref={svgRef} />;

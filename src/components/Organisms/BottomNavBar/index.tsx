@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { IconType } from "react-icons";
-import { colors, links } from "@/constants";
+import { links } from "@/constants";
+import { vars } from "@/token";
 import * as S from "./index.styles";
 
 import { GoHomeFill } from "react-icons/go";
@@ -65,7 +66,7 @@ export const BottomNavBar = () => {
           >
             <Icon
               size={25}
-              color={isActive ? colors.primary : colors.secondary}
+              color={isActive ? vars.colors.primary : vars.colors.secondary}
             />
             <S.ButtonText isActive={isActive}>{menu.title}</S.ButtonText>
           </S.ButtonWrapper>

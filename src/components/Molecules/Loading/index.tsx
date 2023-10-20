@@ -1,4 +1,4 @@
-import { Flex } from "@/components/Atoms";
+import { Flex } from "@components/Atoms";
 import { MoonLoader } from "react-spinners";
 
 export const Loading = () => {

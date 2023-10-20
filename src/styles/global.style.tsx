@@ -1,4 +1,4 @@
-import { colors } from "@/constants/colors";
+import { vars } from "@/token";
 import { Global, css } from "@emotion/react";
 
 const globalStyles = css`
@@ -7,7 +7,7 @@ const globalStyles = css`
   #root {
     margin: 0;
     font-family: "Pretendard", sans-serif;
-    color: ${colors.mainFont};
+    color: ${vars.colors.mainFont};
     height: 100%;
 
     ::-webkit-scrollbar {

@@ -1,4 +1,4 @@
-import { colors } from "@/constants";
+import { vars } from "@/token";
 import { ToastBar, Toaster } from "react-hot-toast";
 
 export const ToastProvider = () => {
@@ -9,13 +9,13 @@ export const ToastProvider = () => {
           fontSize: "16px",
           fontWeight: "500",
           padding: "12px 16px",
-          color: colors.primary,
-          backgroundColor: colors.pastel,
+          color: vars.colors.primary,
+          backgroundColor: vars.colors.pastel,
         },
         success: {
           iconTheme: {
-            primary: colors.primary,
-            secondary: colors.pastel,
+            primary: vars.colors.primary,
+            secondary: vars.colors.pastel,
           },
         },
       }}

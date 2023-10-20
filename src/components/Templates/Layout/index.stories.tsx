@@ -1,6 +1,6 @@
 import { StoryFn, Meta } from "@storybook/react";
 import { BrowserRouter as Router } from "react-router-dom";
-import { colors } from "@/constants";
+import { vars } from "@/token";
 
 import { Layout } from ".";
 
@@ -23,7 +23,7 @@ Default.args = {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: colors.pastel,
+        backgroundColor: vars.colors.pastel,
         height: "100vh",
       }}
     >

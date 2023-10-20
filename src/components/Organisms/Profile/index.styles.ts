@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
-import { Flex, Image } from "@/components/Atoms";
-import { colors } from "@/constants";
+import { Flex, Image } from "@components/Atoms";
+import { vars } from "@/token";
 
 export const ProfileContainer = styled(Flex.Row)`
   gap: 10px;
@@ -12,7 +12,7 @@ export const ProfileContainer = styled(Flex.Row)`
     align-items: center;
     padding: 30px;
     border-radius: 10px;
-    background-color: ${colors.pale};
+    background-color: ${vars.colors.pale};
   }
 `;
 

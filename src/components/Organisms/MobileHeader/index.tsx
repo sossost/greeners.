@@ -4,7 +4,7 @@ import {
   MobileHeaderContainer,
 } from "./index.styles";
 
-import { BackButton } from "@/components/Atoms";
+import { BackButton } from "@components/Atoms";
 
 interface MobileHeaderProps {
   title?: string;

@@ -1,17 +1,17 @@
 import styled from "@emotion/styled";
-import { colors, breakpoints } from "@/constants";
+import { vars } from "@/token";
 import { mediaQueryScreenAndMinWidth } from "@/utils";
 
-import { Flex } from "@/components/Atoms";
+import { Flex } from "@components/Atoms";
 
 export const BottomNavBarContainer = styled(Flex.Row)`
   height: 60px;
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: ${colors.white};
-  border-top: 1px solid ${colors.lightGray};
-  ${mediaQueryScreenAndMinWidth(breakpoints.desktop)} {
+  background-color: ${vars.colors.white};
+  border-top: 1px solid ${vars.colors.lightGray};
+  ${mediaQueryScreenAndMinWidth(vars.breakpoints.desktop)} {
     display: none;
   }
 `;
@@ -24,5 +24,6 @@ export const ButtonWrapper = styled(Flex.ColumnCenter)`
 
 export const ButtonText = styled.span<{ isActive: boolean }>`
   font-size: 12px;
-  color: ${({ isActive }) => (isActive ? colors.primary : colors.secondary)};
+  color: ${({ isActive }) =>
+    isActive ? vars.colors.primary : vars.colors.secondary};
 `;

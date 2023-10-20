@@ -32,6 +32,7 @@
       "@styles/*": ["src/styles/*"],
       "@assets/*": ["src/assets/*"],
       "@types/*": ["src/types/*"],
+      "@token/*": ["src/token/*"],
       "@constants/*": ["src/constants/*"],
       "@store/*": ["src/store/*"],
       "@provider/*": ["src/provider/*"]

@@ -1,4 +1,4 @@
-import { Flex, Title } from "@/components/Atoms";
+import { Flex, Title } from "@components/Atoms";
 
 interface SectionProps extends React.ComponentProps<typeof Flex.Column> {
   title: string;

@@ -1,4 +1,4 @@
-import { breakpoints } from "@/constants";
+import { vars } from "@/token";
 import { mediaQueryScreenAndMinWidth } from "@/utils";
 import {
   Link as LinkComponent,
@@ -24,7 +24,7 @@ export const Link = ({
         alignItems: "center",
         textDecoration: underLine ? "underline" : "none",
         color: "inherit",
-        [mediaQueryScreenAndMinWidth(breakpoints.desktop)]: {
+        [mediaQueryScreenAndMinWidth(vars.breakpoints.desktop)]: {
           cursor: "pointer",
           "&:hover": {
             opacity: 0.7,

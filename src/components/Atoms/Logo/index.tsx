@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { colors, links } from "@/constants";
+import { links } from "@/constants";
+import { vars } from "@/token";
 
 interface LogoProps {
   link?: string;
@@ -11,7 +12,7 @@ export const Logo = ({ link }: LogoProps) => {
   return (
     <div
       css={{
-        color: colors.primary,
+        color: vars.colors.primary,
         fontSize: "24px",
         fontWeight: "bold",
         cursor: "pointer",

@@ -1,4 +1,4 @@
-import { colors } from "@/constants";
+import { vars } from "@/token";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
@@ -21,10 +21,10 @@ export const Button = ({
         alignItems: "center",
         justifyContent: "center",
         fontFamily: "inherit",
-        fontWeight: "500",
-        lineHeight: "2.5",
+        fontWeight: vars.fontWeight.medium,
+        lineHeight: vars.lineHeight.button,
         outline: "none",
-        borderRadius: "10px",
+        borderRadius: vars.borderRadius.default,
         transition: "all .3s ease",
         cursor: disabled ? "not-allowed" : "pointer",
         filter: disabled ? "opacity(0.5)" : "none",
@@ -40,29 +40,29 @@ export const Button = ({
 
 const TYPE_VARIANTS = {
   primary: {
-    border: `1px solid ${colors.primary}`,
-    backgroundColor: colors.primary,
+    border: `1px solid ${vars.colors.primary}`,
+    backgroundColor: vars.colors.primary,
     color: "white",
     " &:hover": {
-      backgroundColor: colors.secondary,
-      borderColor: colors.secondary,
+      backgroundColor: vars.colors.secondary,
+      borderColor: vars.colors.secondary,
     },
   },
   secondary: {
-    border: `1px solid ${colors.primary}`,
+    border: `1px solid ${vars.colors.primary}`,
     backgroundColor: "transparent",
-    color: colors.primary,
+    color: vars.colors.primary,
     "&:hover": {
-      backgroundColor: colors.primary,
-      color: colors.white,
+      backgroundColor: vars.colors.primary,
+      color: vars.colors.white,
     },
   },
   textOnly: {
     border: "1px solid transparent",
     backgroundColor: "transparent",
-    color: colors.primary,
+    color: vars.colors.primary,
     "&:hover": {
-      border: `1px solid ${colors.primary}`,
+      border: `1px solid ${vars.colors.primary}`,
     },
   },
 };

@@ -1,7 +1,8 @@
-import { Flex } from "@/components/Atoms";
-import { BottomNavBar, Header } from "@/components/Organisms";
-import { breakpoints } from "@/constants";
+import { vars } from "@/token";
 import { mediaQueryScreenAndMinWidth } from "@/utils";
+
+import { BottomNavBar, Header } from "@components/Organisms";
+import { Flex } from "@components/Atoms";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -12,7 +13,7 @@ export const Layout = ({ children }: LayoutProps) => {
     <Flex.Column
       css={{
         paddingBottom: "60px",
-        [mediaQueryScreenAndMinWidth(breakpoints.desktop)]: {
+        [mediaQueryScreenAndMinWidth(vars.breakpoints.desktop)]: {
           paddingBottom: "0px",
           paddingTop: "70px",
         },
