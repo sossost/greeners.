@@ -4,6 +4,7 @@ export * from "./Flex";
 export * from "./Image";
 export * from "./Label";
 export * from "./Logo";
+export * from "./Line";
 export * from "./Link";
 export * from "./ProgressBar";
 export * from "./RadialProgressBar";
