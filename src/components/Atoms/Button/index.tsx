@@ -28,6 +28,10 @@ export const Button = ({
         transition: "all .3s ease",
         cursor: disabled ? "not-allowed" : "pointer",
         filter: disabled ? "opacity(0.5)" : "none",
+        ":focus": {
+          border: `1px solid ${vars.colors.white}`,
+          boxShadow: `0 0 0 2px ${vars.colors.accent}`,
+        },
         ...TYPE_VARIANTS[variant],
         ...TYPE_SIZES[size],
       }}
@@ -43,9 +47,10 @@ const TYPE_VARIANTS = {
     border: `1px solid ${vars.colors.primary}`,
     backgroundColor: vars.colors.primary,
     color: "white",
-    " &:hover": {
+    "&:hover": {
       backgroundColor: vars.colors.secondary,
       borderColor: vars.colors.secondary,
+      boxShadow: "none",
     },
   },
   secondary: {
@@ -55,6 +60,7 @@ const TYPE_VARIANTS = {
     "&:hover": {
       backgroundColor: vars.colors.primary,
       color: vars.colors.white,
+      boxShadow: "none",
     },
   },
   textOnly: {
@@ -63,6 +69,7 @@ const TYPE_VARIANTS = {
     color: vars.colors.primary,
     "&:hover": {
       border: `1px solid ${vars.colors.primary}`,
+      boxShadow: "none",
     },
   },
 };
