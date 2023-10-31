@@ -54,7 +54,6 @@ export const Select = ({
 }: SelectProps) => {
   const selectRef = useRef<HTMLDivElement | null>(null);
   const firstChild = React.Children.toArray(children)[0] as ReactElement;
-  const firstOptionChild = firstChild.props.children;
   const firstOptionValue = firstChild.props.value;
 
   const [selectedValue, setSelectedValue] = useState<string>(
@@ -119,8 +118,7 @@ export const Select = ({
         <Label htmlFor={id} fontSize={fontSize} onClick={handleLabelClick}>
           {label}
         </Label>
-        <SelectTrigger>{placeholder || firstOptionChild}</SelectTrigger>
-        <SelectOptionList>{children}</SelectOptionList>
+        {children}
       </Flex.Column>
     </SelectContext.Provider>
   );
@@ -130,7 +128,7 @@ interface SelectTriggerProps {
   children: React.ReactNode;
 }
 
-const SelectTrigger = React.forwardRef(
+Select.Trigger = React.forwardRef(
   (
     { children, ...props }: SelectTriggerProps,
     ref: ForwardedRef<HTMLDivElement>
@@ -188,7 +186,7 @@ interface SelectOptionListProps {
   children: React.ReactNode;
 }
 
-const SelectOptionList = React.forwardRef(
+Select.OptionList = React.forwardRef(
   ({ children }: SelectOptionListProps, ref: ForwardedRef<HTMLDivElement>) => {
     const context = useContext(SelectContext);
 
@@ -218,7 +216,7 @@ interface SelectOptionProps {
 
 Select.Option = React.forwardRef(
   (
-    { value, children }: SelectOptionProps,
+    { value, children, ...props }: SelectOptionProps,
     ref: ForwardedRef<HTMLDivElement>
   ) => {
     const { handleChangeValue, handleClose } = useContext(SelectContext);
@@ -239,6 +237,7 @@ Select.Option = React.forwardRef(
           },
         }}
         ref={ref}
+        {...props}
       >
         {children}
       </SelectItem>

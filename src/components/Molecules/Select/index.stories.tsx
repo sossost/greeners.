@@ -25,9 +25,12 @@ export default {
 
 const Template: StoryFn<typeof Select> = (args) => (
   <Select {...args}>
-    <Select.Option value="option 1">option 1</Select.Option>
-    <Select.Option value="option 2">option 2</Select.Option>
-    <Select.Option value="option 3">option 3</Select.Option>
+    <Select.Trigger>옵션을 선택하세요.</Select.Trigger>
+    <Select.OptionList>
+      <Select.Option value="option 1">option 1</Select.Option>
+      <Select.Option value="option 2">option 2</Select.Option>
+      <Select.Option value="option 3">option 3</Select.Option>
+    </Select.OptionList>
   </Select>
 );
 
