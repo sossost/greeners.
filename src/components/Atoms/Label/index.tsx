@@ -18,6 +18,7 @@ export const Label = ({
     <label
       htmlFor={htmlFor}
       css={{
+        width: "fit-content",
         fontSize: coerceValueToCssPixel(fontSize),
         lineHeight: 2.5,
         fontWeight: "600",
